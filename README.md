@@ -34,7 +34,6 @@ What things you need to install the software ?
 
 **api/v1.1/.env**
 
-`$config['base_url'] = 'http://www.trailmap4life.com/app'` Application URL
 `DB_HOST=localhost` Database hostname
 `DB_PORT=3306` Database port number
 `DB_DATABASE=event` Database name
