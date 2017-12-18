@@ -31,6 +31,8 @@ What things you need to install the software ?
 - Create a database named event
 - Import the db dump file  /db/event.sql
 - Change the following application level config values
+- run the node server `node node-server.js`
+- Give full write permission for the following folder `event/api/v1.1/storage/logs`
 
 **api/v1.1/.env**
 
