@@ -36,23 +36,23 @@ What things you need to install the software ?
 
 **api/v1.1/.env**
 
-`DB_HOST=localhost` Database hostname
-`DB_PORT=3306` Database port number
-`DB_DATABASE=event` Database name
-`DB_USERNAME=root` Database user name
-`DB_PASSWORD=''` Database password
+- `DB_HOST=localhost` Database hostname
+- `DB_PORT=3306` Database port number
+- `DB_DATABASE=event` Database name
+- `DB_USERNAME=root` Database user name
+- `DB_PASSWORD=''` Database password
 
 **js/app.js**
 	
-`var realtime_update = true;` Enable/Disable Real time data update using node socket io.
-`var node_endpoint = 'http://localhost:3000';` Node server end point.
+- `var realtime_update = true;` Enable/Disable Real time data update using node socket io.
+- `var node_endpoint = 'http://localhost:3000';` Node server end point.
 
 **node-server.js**
 	
-`var db_name 	= 'event';` Database name.
-`var user_name 	= 'root';` Database user name.
-`var password 	= '';` Database password.
-`var db_host 	= 'localhost';` Database hostname.
+- `var db_name 	= 'event';` Database name.
+- `var user_name 	= 'root';` Database user name.
+- `var password 	= '';` Database password.
+- `var db_host 	= 'localhost';` Database hostname.
 
 ### Front End:
 * A modern JavaScript enabled browser is required to use the app.  We recommend a current version of Firefox or Chrome. 
