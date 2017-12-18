@@ -26,14 +26,15 @@ What things you need to install the software ?
 
 ### Deployment Steps
 
-- [git clone https://github.com/lijoejohn/event.git projectname]
-- [cd event]
-- [Create a database named event]
-- [Import the db dump file  /db/event.sql]
-- [Change the following application level config values]
+- git clone https://github.com/lijoejohn/event.git projectname
+- cd event
+- Create a database named event
+- Import the db dump file  /db/event.sql
+- Change the following application level config values
 
 **api/v1.1/.env**
-	
+
+`$config['base_url'] = 'http://www.trailmap4life.com/app'` Application URL
 `DB_HOST=localhost` Database hostname
 `DB_PORT=3306` Database port number
 `DB_DATABASE=event` Database name
