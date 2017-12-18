@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<checkstyle version="1.3.0">
+  <file name="LoginController.php">
+    <error line="35" severity="error" message="No summary for method __construct()" source="phpDocumentor.file.PPC:ERR-50008"/>
+    <error line="40" severity="error" message="Argument $request is missing from the Docblock of logout" source="phpDocumentor.file.PPC:ERR-50015"/>
+    <error line="40" severity="error" message="No summary for method logout()" source="phpDocumentor.file.PPC:ERR-50008"/>
+    <error line="49" severity="error" message="Argument $request is missing from the Docblock of auth" source="phpDocumentor.file.PPC:ERR-50015"/>
+    <error line="49" severity="error" message="No summary for method auth()" source="phpDocumentor.file.PPC:ERR-50008"/>
+  </file>
+</checkstyle>

@@ -1,0 +1,21 @@
+##RewriteEngine on
+##RewriteCond %{REQUEST_FILENAME} !-d
+##RewriteRule ^(.*)/$ /$1 [L,R=301
+
+## remove trailing slash
+#RewriteRule ^(.*)/$ $1 [R=301]
+
+## rewrite rule that internally adds the .html extension
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME}.php -f
+#RewriteRule ^(.+[^/])$ $1.php
+
+
+Options All -Indexes
+RewriteEngine On
+RewriteBase /event/
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.+)$ $1.php [L]

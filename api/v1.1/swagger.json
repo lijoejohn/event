@@ -1,0 +1,428 @@
+{  
+   "swagger":"2.0",
+   "info":{  
+      "description":"This is a sample server Drive safe server",
+      "version":"1.0.0",
+      "title":"Swagger Drive safe",
+      "termsOfService":"http://swagger.io/terms/",
+      "contact":{  
+         "email":"apiteam@swagger.io"
+      },
+      "license":{  
+         "name":"Apache 2.0",
+         "url":"http://www.apache.org/licenses/LICENSE-2.0.html"
+      }
+   },
+   "host":"10.10.4.184/event/api/v1.1",
+   "basePath":"/rest",
+   "tags":[  
+      {  
+         "name":"Authentication",
+         "description":"Authentication & Registration",
+      },
+      {  
+         "name":"User Management",
+         "description":"User Management"
+      },
+      {  
+         "name":"Profile Management",
+         "description":"Profile Management",
+      },
+   ],
+   "schemes":[  
+      "http"
+   ],
+   "paths":{ 
+      "/app_config":{
+         "post":{  
+            "tags":[  
+               "Authentication"
+            ],
+            "summary":"API Configuration",
+            "description":"",
+            "consumes":[  
+               "application/json",
+               "application/xml"
+            ],
+            "produces":[  
+               "application/json",
+               "application/xml"
+            ],
+            "parameters":[  
+               {  
+                  "in":"body",
+                  "name":"body",
+                  "description":'App configuration Object  {"client":{"id": "B8B2DFF6189270D5EA14B6513A10718D78B82494D05C4D3118CBAADEAA2A33E5","secret": "13FFF7C032AA2ECB5BD6460641C12E9315AFD16F36F0200BC42ECD5D53721E68"}}',
+                  "required":true,
+                  "type":"string",
+                  "schema":{},
+				  "example":"approved     # Example of a parameter value"
+               }
+            ],
+            "responses":
+            { 
+
+            }
+         },
+      },
+      "/login":{
+         "post":{  
+            "tags":[  
+               "Authentication"
+            ],
+            "summary":"Login",
+            "description":"",
+            "consumes":[  
+               "application/json",
+               "application/xml"
+            ],
+            "produces":[  
+               "application/json",
+               "application/xml"
+            ],
+            "parameters":[  
+               {  
+                  "in":"body",
+                  "name":"body",
+                  "description":'Login Object {"client":{"id": "B8B2DFF6189270D5EA14B6513A10718D78B82494D05C4D3118CBAADEAA2A33E5","secret": "13FFF7C032AA2ECB5BD6460641C12E9315AFD16F36F0200BC42ECD5D53721E68"},"account":{"email": "admin@event.net","password": "fingadmin"}}',
+                  "required":true,
+                  "type":"string",
+                  "schema":{}
+               }
+            ],
+            "responses":
+            { 
+
+            }
+         },
+      },
+      "/forgot_password":{
+         "post":{  
+            "tags":[  
+               "Authentication"
+            ],
+            "summary":"To request for a reset password",
+            "description":"",
+            "consumes":[  
+               "application/json",
+               "application/xml"
+            ],
+            "produces":[  
+               "application/json",
+               "application/xml"
+            ],
+            "parameters":[  
+               {  
+                  "in":"body",
+                  "name":"body",
+                  "description":"Login Object ",
+                  "required":true,
+                  "type":"string",
+                  "schema":{}
+               }
+            ],
+            "responses":
+            { 
+
+            }
+         },
+      },
+      "/country_list":{
+         "post":{  
+            "tags":[  
+               "Authentication"
+            ],
+            "summary":"Get list of countries using client id and secret",
+            "description":"",
+            "consumes":[  
+               "application/json",
+               "application/xml"
+            ],
+            "produces":[  
+               "application/json",
+               "application/xml"
+            ],
+            "parameters":[  
+               {  
+                  "in":"body",
+                  "name":"body",
+                  "description":"Object with client id and secret",
+                  "required":true,
+                  "type":"string",
+                  "schema":{}
+               }
+            ],
+            "responses":
+            { 
+
+            }
+         },
+         "get":{  
+            "tags":[  
+               "Authentication"
+            ],
+            "summary":"Get list of countries using token",
+            "description":"",
+            "consumes":[  
+               "application/json",
+               "application/xml"
+            ],
+            "produces":[  
+               "application/json",
+               "application/xml"
+            ],
+            "parameters":[  
+               {  
+                  "name":"Authorization",
+                  "in":"header",
+                  "required":false,
+                  "type":"string"
+               }
+            ],
+            "responses":
+            { 
+
+            }
+         }
+      },
+      "/state_list":{
+         "post":{  
+            "tags":[  
+               "Authentication"
+            ],
+            "summary":"Get list of states using client id and secret",
+            "description":"",
+            "consumes":[  
+               "application/json",
+               "application/xml"
+            ],
+            "produces":[  
+               "application/json",
+               "application/xml"
+            ],
+            "parameters":[  
+               {  
+                  "in":"body",
+                  "name":"body",
+                  "description":"Object with client id and secret",
+                  "required":true,
+                  "type":"string",
+                  "schema":{}
+               }
+            ],
+            "responses":
+            { 
+
+            }
+         },
+         "get":{  
+            "tags":[  
+               "Authentication"
+            ],
+            "summary":"Get list of states using token",
+            "description":"",
+            "consumes":[  
+               "application/json",
+               "application/xml"
+            ],
+            "produces":[  
+               "application/json",
+               "application/xml"
+            ],
+            "parameters":[  
+               {  
+                  "name":"Authorization",
+                  "in":"header",
+                  "required":false,
+                  "type":"string"
+               },
+               {  
+                  "name":"countryId",
+                  "in":"query",
+                  "description":"Country ID",
+                  "required":true,
+                  "type":"integer"
+               }
+            ],
+            "responses":
+            { 
+
+            }
+         }
+      },
+      "/upload_photo":{
+         "post":{ 
+            "tags":[  
+               "Authentication"
+            ],
+            "summary":"Upload Photo",
+            "description":"",
+            "consumes":[  
+               "application/json",
+               "application/xml"
+            ],
+            "produces":[  
+               "application/json",
+               "application/xml"
+            ],
+            "parameters":[  
+               {  
+                  "name":"upload",
+                  "in":"formData",
+                  "description":"file to upload",
+                  "required":false,
+                  "type":"file"
+               },
+               {  
+                  "name":"Authorization",
+                  "in":"header",
+                  "required":false,
+                  "type":"string"
+               }
+            ],
+            "responses":
+            { 
+
+            }
+         },
+      },
+      "/user":{
+         "get":{
+            "tags":[  
+               "User Management"
+            ],
+            "summary":"Get All Users",
+            "description":"",
+            "consumes":[  
+               "application/json",
+               "application/xml"
+            ],
+            "produces":[  
+               "application/json",
+               "application/xml"
+            ],
+            "parameters":[  
+               {  
+                  "name":"Authorization",
+                  "in":"header",
+                  "required":false,
+                  "type":"string"
+               },
+               {  
+                  "name":"listType",
+                  "in":"query",
+                  "description":"listType  (all,parent,staff)",
+                  "required":true,
+                  "type":"string"
+               }
+               
+            ],
+            "responses":
+            { 
+
+            }
+         }
+      },
+      "/profile":{
+         "get":{
+            "tags":[  
+               "User Profile"
+            ],
+            "summary":"Get User Profile",
+            "description":"",
+            "consumes":[  
+               "application/json",
+               "application/xml"
+            ],
+            "produces":[  
+               "application/json",
+               "application/xml"
+            ],
+            "parameters":[  
+               {  
+                  "name":"Authorization",
+                  "in":"header",
+                  "required":false,
+                  "type":"string"
+               }
+            ],
+            "responses":
+            { 
+
+            }
+         },
+         "put":{
+            "tags":[  
+               "User Profile"
+            ],
+            "summary":"Update User Profile",
+            "description":"",
+            "consumes":[  
+               "application/json",
+               "application/xml"
+            ],
+            "produces":[  
+               "application/json",
+               "application/xml"
+            ],
+            "parameters":[  
+               {  
+                  "in":"body",
+                  "name":"body",
+                  "description":'Object with User Profile {"address": "11453113 International","city": "California","countyId": "169","firstName": "Dr. Sunny","lastName": "Abraham","mobileNumber": "766435353","profileImageURL": "http://www.hbc333.com/profile-picture.jpg","stateId": "2765","zip": "14742"}',
+                  "required":true,
+                  "type":"string",
+                  "schema":{}
+               },
+               {  
+                  "name":"Authorization",
+                  "in":"header",
+                  "required":false,
+                  "type":"string"
+               }
+            ],
+            "responses":
+            { 
+
+            }
+         }
+      },
+      "/change_password":{
+         "put":{  
+            "tags":[  
+               "User Profile"
+            ],
+            "summary":"Change current password",
+            "description":"Change current password",
+            "consumes":[  
+               "application/json",
+               "application/xml"
+            ],
+            "produces":[  
+               "application/json",
+               "application/xml"
+            ],
+            "parameters":[  
+               {  
+                  "in":"body",
+                  "name":"body",
+                  "description":'Change password Object {"oldPassword": "fingadmin","newPassword": "fingadmin"}',
+                  "required":true,
+                  "type":"string",
+                  "schema":{}
+               },
+               {  
+                  "name":"Authorization",
+                  "in":"header",
+                  "required":false,
+                  "type":"string"
+               }
+            ],
+            "responses":
+            { 
+
+            }
+         },
+      },
+   },
+}

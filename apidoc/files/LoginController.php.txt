@@ -1,0 +1,131 @@
+<?php
+/**
+  * A summary informing the user what the associated element does.
+  *
+  * A *description*, that can span multiple lines, to go _in-depth_ into the details of this element
+  * and to provide some background information or textual references.
+  *
+  * @param string $myArgument With a *description* of this argument, these may also
+  *    span multiple lines.
+  *
+  * @return void
+  */
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use DB;
+use Session;
+use Hash;
+use Mail;
+use App\Common;
+/**
+  * A summary informing the user what the associated element does.
+  *
+  * A *description*, that can span multiple lines, to go _in-depth_ into the details of this element
+  * and to provide some background information or textual references.
+  *
+  * @param string $myArgument With a *description* of this argument, these may also
+  *    span multiple lines.
+  *
+  * @return void
+  */
+class LoginController extends Controller
+{
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['logout']]);
+    }
+
+    public function logout(Request $request)
+    {
+        $api_token  = CommonController::get_token();
+        if (isset($api_token) && $api_token!='')
+        {
+            DB::table('auth_token')->where(['token' => trim($api_token),'status' =>1,'type'=>1])->delete();
+        }
+        return response()->json(['status'=>1,'message' => "You have successfully logged out"]);
+    }
+    public function auth(Request $request) 
+    {
+        $msg        = '';
+        $status     = 0;
+        $user       = array();
+		
+        $api_token  = CommonController::get_token();
+
+		$email      = strtolower($request->input('email'));
+		$password   = $request->input('password');
+	
+
+        if($email && trim($email)!='')
+        {
+            $user_exist = DB::table('users')->select('user_id','first_name','last_name','status','password')->where('email','like', trim($email))->where('status','<>',3);
+            
+			$user = array();
+            if ($user_exist->count() > 0 && trim($email)!='') 
+            {
+                $user       = ['user_id' =>$user_exist->first()->user_id,'user_name' =>$user_exist->first()->first_name." ".$user_exist->first()->last_name];
+				
+                if (Hash::check($password, $user_exist->first()->password)) 
+                {
+                    if ($user_exist->first()->status == 2) 
+                    {
+                        $msg    = 'Your account is disabled';
+                        $status = 0;
+                    } 
+                    else if ($user_exist->first()->status == 3) 
+                    {
+                        $msg    = 'Your account is deleted';
+                        $status = 0;
+                    }
+                    else
+                    {
+                        $token          = $this->getRandomStringMD5(25);
+                        DB::table('auth_token')->insert(['user_id' => $user['user_id'], 'token' => $token,'status' =>1,'created'=>date('Y-m-d H:i:s'),'type'=>1]);
+                        $user['token']        = $token;
+                        $msg    = 'Login success';
+                        $status = 1;
+                    }
+                } 
+                else 
+                {
+                    $msg    = 'Invalid username or password';
+                    $status = 0;
+                }
+            } 
+            else 
+            {
+                $status = 0;
+                $msg    = 'Invalid username or password';
+            }
+        }
+        else if(isset($api_token) && $api_token!='')
+        {
+            $auth_token = DB::table('auth_token')->where(['token' => trim($api_token),'status' =>1,'type'=>1]);
+            if(isset($auth_token->first()->user_id) && $auth_token->first()->user_id>0)
+            {
+                $user_exist = DB::table('users')->select('user_id','email','status','first_name','last_name')->where(['user_id' => trim($auth_token->first()->user_id)]);
+                $user       = $user_exist->first();
+                $user->user_name  = $user->first_name." ".$user->last_name;
+                $msg        = 'Login success';
+                $status     = 1;
+                
+            }
+            else
+            {
+                $msg    = 'Invalid token';
+                $status = 0;
+            }
+        }
+        else
+        {
+            $status = 0;
+            $msg    = 'Invalid username or password';
+        }
+        return response()->json(['status'=>$status,'message' => $msg,"data"=>$user]); 
+    }
+    
+}
+
+

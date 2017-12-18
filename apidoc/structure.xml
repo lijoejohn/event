@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="API Documentation" version="2.8.5">
+  <partials/>
+  <file path="UserController.php" generated-path="UserController.html" hash="1db690d4d6ecfb9fe224bb217571b9ea" package="App\Http\Controllers">
+    <docblock line="0">
+      <description>UserController.php</description>
+      <long-description>A Class file for user related actions
+
+PHP version 5.6 +</long-description>
+      <tag name="category" line="0" description="User"/>
+      <tag name="package" line="0" description="App\Http\Controllers"/>
+      <tag name="author" line="0" description="Lijo E John" link="mailto:lijoejohn@gmail.com"/>
+      <tag name="license" line="0" description="PHP License 3.01" link="http://www.php.net/license/3_01.txt"/>
+      <tag name="version" line="0" description="Git: 1.1"/>
+      <tag name="link" line="0" description="http://pear.php.net/package/PackageName" link="http://pear.php.net/package/PackageName"/>
+      <tag name="return" line="0" description="" type="void">
+        <type>void</type>
+      </tag>
+    </docblock>
+    <namespace-alias name="Request">\Illuminate\Http\Request</namespace-alias>
+    <namespace-alias name="DB">\DB</namespace-alias>
+    <namespace-alias name="Hash">\Hash</namespace-alias>
+    <namespace-alias name="Validator">\Validator</namespace-alias>
+    <namespace-alias name="CommonController">\App\Http\Controllers\CommonController</namespace-alias>
+    <class final="false" abstract="false" namespace="App\Http\Controllers" line="33" package="App\Http\Controllers">
+      <extends>\App\Http\Controllers\Controller</extends>
+      <name>UserController</name>
+      <full_name>\App\Http\Controllers\UserController</full_name>
+      <docblock line="33">
+        <description>A Class file for user related actions</description>
+        <long-description></long-description>
+        <tag name="category" line="33" description="User"/>
+        <tag name="package" line="33" description="App\Http\Controllers"/>
+        <tag name="version" line="33" description="Git: 1.1"/>
+        <tag name="author" line="33" description="Lijo E John" link="mailto:lijoejohn@gmail.com"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="App\Http\Controllers" line="48" package="App\Http\Controllers">
+        <name>get_all_user_list</name>
+        <full_name>\App\Http\Controllers\UserController::get_all_user_list()</full_name>
+        <docblock line="48">
+          <description>UserController::get_all_user_list</description>
+          <long-description>Action to handle the user listing. This function is using to get all the active registred users by passing a valid user token .</long-description>
+          <tag name="category" line="48" description="User"/>
+          <tag name="package" line="48" description="App\Http\Controllers"/>
+          <tag name="version" line="48" description="Git: 1.1"/>
+          <tag name="author" line="48" description="Lijo E John" link="mailto:lijoejohn@gmail.com"/>
+          <tag name="param" line="48" description="" type="null" variable="">
+            <type>null</type>
+          </tag>
+          <tag name="return" line="48" description="json data , on a valid access a successful response with all the active registred users and on unauthorised access response with error message." type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="App\Http\Controllers" line="83" package="App\Http\Controllers">
+        <name>get_all_invites_list</name>
+        <full_name>\App\Http\Controllers\UserController::get_all_invites_list()</full_name>
+        <docblock line="83">
+          <description>UserController::get_all_invites_list</description>
+          <long-description>Action to handle the invites listing. This function is using to get all the active registred invites by passing a valid user token and event_id.</long-description>
+          <tag name="category" line="83" description="User"/>
+          <tag name="package" line="83" description="App\Http\Controllers"/>
+          <tag name="version" line="83" description="Git: 1.1"/>
+          <tag name="author" line="83" description="Lijo E John" link="mailto:lijoejohn@gmail.com"/>
+          <tag name="param" line="83" description="" type="\Illuminate\Http\Request" variable="$request">
+            <type>\Illuminate\Http\Request</type>
+          </tag>
+          <tag name="return" line="83" description="json data , on a valid access a successful response with all the active registred invites and on unauthorised access response with error message." type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$request</name>
+          <default></default>
+          <type>\Illuminate\Http\Request</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="App\Http\Controllers" line="117" package="App\Http\Controllers">
+        <name>add_event</name>
+        <full_name>\App\Http\Controllers\UserController::add_event()</full_name>
+        <docblock line="117">
+          <description>UserController::add_event</description>
+          <long-description>Action to handle the creation of event. This function is using to add a new event by passing a valid user token .</long-description>
+          <tag name="category" line="117" description="User"/>
+          <tag name="package" line="117" description="App\Http\Controllers"/>
+          <tag name="version" line="117" description="Git: 1.1"/>
+          <tag name="author" line="117" description="Lijo E John" link="mailto:lijoejohn@gmail.com"/>
+          <tag name="param" line="117" description="" type="\Illuminate\Http\Request" variable="$request">
+            <type>\Illuminate\Http\Request</type>
+          </tag>
+          <tag name="return" line="117" description="json data , on a valid access a successful response with all the active events and on unauthorised access response with error message." type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$request</name>
+          <default></default>
+          <type>\Illuminate\Http\Request</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="App\Http\Controllers" line="190" package="App\Http\Controllers">
+        <name>register_user</name>
+        <full_name>\App\Http\Controllers\UserController::register_user()</full_name>
+        <docblock line="190">
+          <description>UserController::register_user</description>
+          <long-description>Action to handle the user registration. This function is using to add users to the database by passing a valid client id.</long-description>
+          <tag name="category" line="190" description="User"/>
+          <tag name="package" line="190" description="App\Http\Controllers"/>
+          <tag name="version" line="190" description="Git: 1.1"/>
+          <tag name="author" line="190" description="Lijo E John" link="mailto:lijoejohn@gmail.com"/>
+          <tag name="param" line="190" description="" type="\App\Http\Controllers\obejct" variable="$request">
+            <type>\App\Http\Controllers\obejct</type>
+          </tag>
+          <tag name="return" line="190" description="json data , on a valid access a successful response with the user details and on unauthorised access response with error message." type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$request</name>
+          <default></default>
+          <type>\App\Http\Controllers\obejct</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="App\Http\Controllers" line="276" package="App\Http\Controllers">
+        <name>get_dashboard_data</name>
+        <full_name>\App\Http\Controllers\UserController::get_dashboard_data()</full_name>
+        <docblock line="276">
+          <description>UserController::get_dashboard_data</description>
+          <long-description>Action to handle the dashboard listing. This function is using to get the active upcoming events by passing a valid client id or user token.</long-description>
+          <tag name="category" line="276" description="User"/>
+          <tag name="package" line="276" description="App\Http\Controllers"/>
+          <tag name="version" line="276" description="Git: 1.1"/>
+          <tag name="author" line="276" description="Lijo E John" link="mailto:lijoejohn@gmail.com"/>
+          <tag name="param" line="276" description="" type="\App\Http\Controllers\obejct" variable="$request">
+            <type>\App\Http\Controllers\obejct</type>
+          </tag>
+          <tag name="return" line="276" description="json data , on a valid access a successful response with the active upcoming events and on unauthorised access response with error message." type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$request</name>
+          <default></default>
+          <type>\App\Http\Controllers\obejct</type>
+        </argument>
+      </method>
+    </class>
+    <source>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</source>
+  </file>
+  <file path="LoginController.php" generated-path="LoginController.html" hash="f0b2ff4b7d452bda35670faa21fe525e" package="App\Http\Controllers">
+    <docblock line="0">
+      <description>LoginController.php</description>
+      <long-description>A Class file for Login and authentication related functions
+
+PHP version 5.6 +</long-description>
+      <tag name="category" line="0" description="Login"/>
+      <tag name="package" line="0" description="App\Http\Controllers"/>
+      <tag name="author" line="0" description="Lijo E John" link="mailto:lijoejohn@gmail.com"/>
+      <tag name="license" line="0" description="PHP License 3.01" link="http://www.php.net/license/3_01.txt"/>
+      <tag name="version" line="0" description="Git: 1.1"/>
+      <tag name="link" line="0" description="http://pear.php.net/package/PackageName" link="http://pear.php.net/package/PackageName"/>
+      <tag name="return" line="0" description="" type="void">
+        <type>void</type>
+      </tag>
+    </docblock>
+    <namespace-alias name="Request">\Illuminate\Http\Request</namespace-alias>
+    <namespace-alias name="DB">\DB</namespace-alias>
+    <namespace-alias name="Hash">\Hash</namespace-alias>
+    <namespace-alias name="Common">\App\Common</namespace-alias>
+    <class final="false" abstract="false" namespace="App\Http\Controllers" line="32" package="App\Http\Controllers">
+      <extends>\App\Http\Controllers\Controller</extends>
+      <name>LoginController</name>
+      <full_name>\App\Http\Controllers\LoginController</full_name>
+      <docblock line="32">
+        <description>A Class file for Login and authentication related functions</description>
+        <long-description></long-description>
+        <tag name="category" line="32" description="Login"/>
+        <tag name="package" line="32" description="App\Http\Controllers"/>
+        <tag name="version" line="32" description="Git: 1.1"/>
+        <tag name="author" line="32" description="Lijo E John" link="mailto:lijoejohn@gmail.com"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="App\Http\Controllers" line="46" package="App\Http\Controllers">
+        <name>__construct</name>
+        <full_name>\App\Http\Controllers\LoginController::__construct()</full_name>
+        <docblock line="46">
+          <description>LoginController::construct</description>
+          <long-description>Registering middleware for logout action, logout action only can access using a valid login token.</long-description>
+          <tag name="category" line="46" description="Login"/>
+          <tag name="package" line="46" description="App\Http\Controllers"/>
+          <tag name="version" line="46" description="Git: 1.1"/>
+          <tag name="author" line="46" description="Lijo E John" link="mailto:lijoejohn@gmail.com"/>
+          <tag name="param" line="46" description="" type="null" variable="">
+            <type>null</type>
+          </tag>
+          <tag name="return" line="46" description="" type="object">
+            <type>object</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="App\Http\Controllers" line="63" package="App\Http\Controllers">
+        <name>logout</name>
+        <full_name>\App\Http\Controllers\LoginController::logout()</full_name>
+        <docblock line="63">
+          <description>LoginController::logout</description>
+          <long-description>Action to handle the logout. We have to make the active user token as inactive on the logout action.</long-description>
+          <tag name="category" line="63" description="Login"/>
+          <tag name="package" line="63" description="App\Http\Controllers"/>
+          <tag name="version" line="63" description="Git: 1.1"/>
+          <tag name="author" line="63" description="Lijo E John" link="mailto:lijoejohn@gmail.com"/>
+          <tag name="param" line="63" description="&lt;p&gt;null&lt;/p&gt;" type="mixed" variable="">
+            <type>mixed</type>
+          </tag>
+          <tag name="return" line="63" description="json data" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="App\Http\Controllers" line="85" package="App\Http\Controllers">
+        <name>auth</name>
+        <full_name>\App\Http\Controllers\LoginController::auth()</full_name>
+        <docblock line="85">
+          <description>LoginController::auth</description>
+          <long-description>Action to handle the authentication. This function will be used by the rute with 2 type of input data , either by passing a valid user token or by passing user name and password.</long-description>
+          <tag name="category" line="85" description="Login"/>
+          <tag name="package" line="85" description="App\Http\Controllers"/>
+          <tag name="version" line="85" description="Git: 1.1"/>
+          <tag name="author" line="85" description="Lijo E John" link="mailto:lijoejohn@gmail.com"/>
+          <tag name="param" line="85" description="" type="\App\Http\Controllers\obejct" variable="$request">
+            <type>\App\Http\Controllers\obejct</type>
+          </tag>
+          <tag name="return" line="85" description="json data , on a valid access a successful response and on unauthorised access response with error message." type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$request</name>
+          <default></default>
+          <type>\App\Http\Controllers\obejct</type>
+        </argument>
+      </method>
+    </class>
+    <source>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</source>
+  </file>
+  <file path="CommonController.php" generated-path="CommonController.html" hash="4933db140a13494124259a2270fe6317" package="App\Http\Controllers">
+    <docblock line="0">
+      <description>CommonController.php</description>
+      <long-description>A Class file for common functions
+
+PHP version 5.6 +</long-description>
+      <tag name="category" line="0" description="Common"/>
+      <tag name="package" line="0" description="App\Http\Controllers"/>
+      <tag name="author" line="0" description="Lijo E John" link="mailto:lijoejohn@gmail.com"/>
+      <tag name="license" line="0" description="PHP License 3.01" link="http://www.php.net/license/3_01.txt"/>
+      <tag name="version" line="0" description="Git: 1.1"/>
+      <tag name="link" line="0" description="http://pear.php.net/package/PackageName" link="http://pear.php.net/package/PackageName"/>
+      <tag name="return" line="0" description="" type="void">
+        <type>void</type>
+      </tag>
+    </docblock>
+    <namespace-alias name="Request">\Request</namespace-alias>
+    <class final="false" abstract="false" namespace="App\Http\Controllers" line="27" package="App\Http\Controllers">
+      <extends/>
+      <name>CommonController</name>
+      <full_name>\App\Http\Controllers\CommonController</full_name>
+      <docblock line="27">
+        <description>A Class file for common functions</description>
+        <long-description></long-description>
+        <tag name="category" line="27" description="Common"/>
+        <tag name="package" line="27" description="App\Http\Controllers"/>
+        <tag name="version" line="27" description="Git: 1.1"/>
+        <tag name="author" line="27" description="Lijo E John" link="mailto:lijoejohn@gmail.com"/>
+      </docblock>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="App\Http\Controllers" line="41" package="App\Http\Controllers">
+        <name>get_token</name>
+        <full_name>\App\Http\Controllers\CommonController::get_token()</full_name>
+        <docblock line="41">
+          <description>CommonController::get_token</description>
+          <long-description>Function to get the Bearer authorization token from http request header.</long-description>
+          <tag name="category" line="41" description="Common"/>
+          <tag name="package" line="41" description="App\Http\Controllers"/>
+          <tag name="version" line="41" description="Git: 1.1"/>
+          <tag name="author" line="41" description="Lijo E John" link="mailto:lijoejohn@gmail.com"/>
+          <tag name="param" line="41" description="&lt;p&gt;null&lt;/p&gt;" type="mixed" variable="">
+            <type>mixed</type>
+          </tag>
+          <tag name="return" line="41" description="Bearer authentication token" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="App\Http\Controllers" line="67" package="App\Http\Controllers">
+        <name>verify_client</name>
+        <full_name>\App\Http\Controllers\CommonController::verify_client()</full_name>
+        <docblock line="67">
+          <description>CommonController::verify_client</description>
+          <long-description>Function to verify public http request, each public api will comes with a client_id and client_secret params.</long-description>
+          <tag name="category" line="67" description="Common"/>
+          <tag name="package" line="67" description="App\Http\Controllers"/>
+          <tag name="version" line="67" description="Git: 1.1"/>
+          <tag name="author" line="67" description="Lijo E John" link="mailto:lijoejohn@gmail.com"/>
+          <tag name="param" line="67" description="&lt;p&gt;null&lt;/p&gt;" type="mixed" variable="">
+            <type>mixed</type>
+          </tag>
+          <tag name="return" line="67" description="" type="boolean">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <source>eJzVVFFP2zAQfm6k/IebNK1pQQkV2h5S2GCMgSY0IfZIUWXSS2NI7Cx2KAzx33eJnTYt7ca2p1mq4vi++3z33ZfufciT3HWCft91On04klkmxZEUupBpioVfRzsmeAhHKVMKYp4ixLKAqEZDXIpIcynUHHl+eg53WCg6hLf+O9iaRw4ipnEqiwcAe5k5zll0y6ZIp3CY56NTrfPRogxlQKzUCV1brTN+I+EYvshEwF5KL3hD24NpxnjqU13vTUbKIxSqpk2IMgyC2WxWNeUL1IGNBrvjnYGv7zXUhZ/ZnF1/Z2BYmlZonXAdwsAfNPTiFsyy9DmyYs5vmwrOzfMry9DkFajLQsCd5BPX6QeuIyikCI5rux+6TkkFXeD3EpUeLsb18on8k+4b+/+zgVSNRnW9qzZznUciNF2tcWEYTlGPtbxFUQMM6rNtErQEioNOED6S/FiAqYv/YDZOiRAXMqunBIXRERJkE7K4YVsr0MsU2izRX5jWXFmwDDJ+jxMQZZraY+sapQsupu1WUWgetXo1+GpEpHh1cV5ek9cpk0DR3B0wV9XrgQE+mke1Xht5FHT2G+eFoTnzuksCd3tDWOQFAZweH346vgjhxE6FRRHS1FtzqE4N1yKRx+C9wizXD15zd6/XIm7V1sDzAqfjjOko8bqBEWSkvNG3rV7Q3Z53QLsag8S3zLFCWS0rcpNxObgaLoOeFq+trU2rpmXxFOz82tTkGR4/jKOU0wA3GNtgmgG27bsNyKKkibCcw4ynafUPgIq2OgEGhnrMJ8DEpHlTGFG1UJtM/Xfuv5Yyfam/lwRe63ETqvctl3ORl9rrmiC523WepVSa2rRIiphP6ZvIc38erLNWc6zy63NMcCmPx97iuv19u7/sEv0VvHmzwtsCWK6r3savx6qpixJbFz7Rb/GGqcLfEcSMQMNnn4R9uA5tfgIXgWml</source>
+  </file>
+  <package name="App" full_name="App">
+    <package name="Http" full_name="App\Http">
+      <package name="Controllers" full_name="App\Http\Controllers"/>
+    </package>
+  </package>
+  <package name="global" full_name="global"/>
+  <namespace name="App" full_name="App">
+    <namespace name="Http" full_name="App\Http">
+      <namespace name="Controllers" full_name="App\Http\Controllers"/>
+    </namespace>
+  </namespace>
+  <deprecated count="0"/>
+</project>

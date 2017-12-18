@@ -22,7 +22,7 @@ What things you need to install the software ?
 
 	Web Server 	- PHP 5.6.18 and Apache 2.2 or newer
 	Database 	- Mysql 5.7.19
-	Node server - v6.11.3
+	Node server 	- v6.11.3
 
 ### Deployment Steps
 
