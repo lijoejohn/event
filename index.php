@@ -11,14 +11,15 @@
             <!-- MAIN PANEL -->
 			<div id="main" role="main">
 				<!-- MAIN CONTENT -->
-				<div id="content">
+				<div id="content ">
 				
 					
-						
+						<span class="no-data" v-if="event_list.length == 0">No Events Found</span>
 					
 						<event-item
 						v-for="item in event_list"
 						v-bind:event="item"
+						v-bind:user_id_logged="user_id"
 						v-bind:key="item.id">
 						</event-item>
 					  

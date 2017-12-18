@@ -37,8 +37,8 @@ var page_data = {
  * @author     Lijo E John <lijoejohn@gmail.com>
  */
 Vue.component('event-item', {
-    props: ['event'],
-    template: '<div class="col-sm-6 col-md-4"><div class="thumbnail"><div class="caption"><h3 style="word-break: break-all;"><b>{{ event.event_title }}</b></h3><p>{{ event.event_location }}</p><p>{{ event.event_time }}</p><p>Host Name : <b>{{event.host_name}}</b></p><div class="button_section"><p><a class="btn btn-sm btn-primary pull-right view_invites_button" v-bind:data-event_id="event.event_id" data-toggle="modal" data-target="#viewinvitesmodal" role="button">View invites </a></p></div></div></div></div>'
+    props: ['event','user_id_logged'],
+    template: '<div class="col-sm-6 col-md-4"><div class="thumbnail"><div class="caption"><h3 style="word-break: break-all;"><b>{{ event.event_title }}</b></h3><p>{{ event.event_location }}</p><p>{{ event.event_time }}</p><p>Host Name : <b>{{event.host_name}}</b></p><div class="button_section"><p><a v-if="user_id_logged>0" class="btn btn-sm btn-primary pull-right view_invites_button" v-bind:data-event_id="event.event_id" data-toggle="modal" data-target="#viewinvitesmodal" role="button">View invites </a></p></div></div></div></div>'
 });
 
 /**

@@ -26,13 +26,13 @@ What things you need to install the software ?
 
 ### Deployment Steps
 
-- git clone https://github.com/lijoejohn/event.git projectname
+- git clone https://github.com/lijoejohn/event.git
 - cd event
 - Create a database named event
 - Import the db dump file  /db/event.sql
-- Change the following application level config values
 - run the node server `node node-server.js`
 - Give full write permission for the following folder `event/api/v1.1/storage/logs`
+- Change the following application level config values
 
 **api/v1.1/.env**
 
