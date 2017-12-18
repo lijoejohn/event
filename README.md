@@ -6,15 +6,16 @@ A Single page web application for Event Management with Lumen, Vue.js, axios, ex
 
 These instructions will get you a copy of the project up and running on your server for production purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Technology Stack
+### Technology Stack:
 
-	- [Lumen - The stunningly fast micro-framework by Laravel](https://lumen.laravel.com/)
-	- [Vue.js - The Progressive JavaScript Framework](https://vuejs.org/)
-	- [axios - Promise based HTTP client for the browser and node.js](https://github.com/axios/axios)
-	- [Node.js](https://nodejs.org/en/)
-	- [SOCKET.IO 2.0 - Socket.IO enables real-time bidirectional event-based communication](https://socket.io/)
-	- [Express - Minimalist web framework for Node.js](https://expressjs.com/)
-	- [Mysql - Open-source relational database management system](https://www.mysql.com/)
+- [Lumen - The stunningly fast micro-framework by Laravel](https://lumen.laravel.com/)
+- [Vue.js - The Progressive JavaScript Framework](https://vuejs.org/)
+- [axios - Promise based HTTP client for the browser and node.js](https://github.com/axios/axios)
+- [Node.js](https://nodejs.org/en/)
+- [SOCKET.IO 2.0 - Socket.IO enables real-time bidirectional event-based communication](https://socket.io/)
+- [Express - Minimalist web framework for Node.js](https://expressjs.com/)
+- [Mysql - Open-source relational database management system](https://www.mysql.com/)
+
 
 ### Prerequisites
 
