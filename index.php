@@ -11,7 +11,7 @@
             <!-- MAIN PANEL -->
 			<div id="main" role="main">
 				<!-- MAIN CONTENT -->
-				<div id="content ">
+				<div id="content">
 				
 					
 						<span class="no-data" v-if="event_list.length == 0">No Events Found</span>
